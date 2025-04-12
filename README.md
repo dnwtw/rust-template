@@ -1,4 +1,6 @@
-# Geektime Rust 语言训练营
+# Rust 项目模板
+
+修改自 tyr-rust-bootcamp/template
 
 ## 环境设置
 
@@ -34,10 +36,10 @@ cargo generate 是一个用于生成项目模板的工具。它可以使用已�
 cargo install cargo-generate
 ```
 
-在我们的课程中，新的项目会使用 `tyr-rust-bootcamp/template` 模版生成基本的代码：
+项目会使用 `dnwtw/rust-template` 模版生成基本的代码：
 
 ```bash
-cargo generate tyr-rust-bootcamp/template
+cargo generate dnwtw/rust-template
 ```
 
 ### 安装 pre-commit
@@ -56,6 +58,15 @@ Cargo deny 是一个 Cargo 插件，可以用于检查依赖的安全性。
 
 ```bash
 cargo install --locked cargo-deny
+```
+
+如果 deny 找不到 advisory-db 文件, 可以先配置代理再手动拉取
+
+```bash
+$env:http_proxy = "http://127.0.0.1:7890"
+$env:https_proxy = "http://127.0.0.1:7890"
+
+cargo deny check advisories
 ```
 
 ### 安装 typos
